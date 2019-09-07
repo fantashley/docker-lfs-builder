@@ -1,6 +1,4 @@
 set +h
-set -o vi
-alias ll='ls -l'
 umask 022
 LFS=/mnt/lfs
 LC_ALL=POSIX
