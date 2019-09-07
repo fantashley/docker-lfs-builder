@@ -25,6 +25,11 @@ RUN apt-get update && \
 	vim \
 	wget
 
+ENV LFS=/mnt/lfs
+ENV LC_ALL=POSIX
+ENV LFS_TGT=$(uname -m)-lfs-linux-gnu
+ENV PATH=/tools/bin:/bin:/usr/bin
+
 RUN rm /bin/sh && \
     ln -s /bin/bash /bin/sh
 
