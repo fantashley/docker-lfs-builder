@@ -1,5 +1,7 @@
 FROM debian:buster
 
+LABEL maintainer="amn@fantashley.com"
+
 RUN apt-get update && \
     apt-get install -y \
     	binutils \
