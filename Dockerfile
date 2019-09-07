@@ -1,7 +1,5 @@
 FROM debian:buster
 
-ENV LFS /mnt/lfs
-
 RUN apt-get update && \
     apt-get install -y \
     	binutils \
@@ -24,12 +22,18 @@ RUN apt-get update && \
 	sed \
 	tar \
 	texinfo \
+	vim \
 	wget
 
 RUN rm /bin/sh && \
     ln -s /bin/bash /bin/sh
 
+RUN mkdir -p /mnt/lfs/source && \
+    mkdir -p /mnt/lfs/tools && \
+    ln -s /mnt/lfs/tools /
+
 COPY version-check.sh .
+COPY .bashrc /root/.bashrc
 
 VOLUME ["/mnt/lfs"]
 
