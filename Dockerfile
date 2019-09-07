@@ -25,9 +25,11 @@ RUN apt-get update && \
 	vim \
 	wget
 
+ARG MACHINE_ARCH=x86_64
+
 ENV LFS=/mnt/lfs
 ENV LC_ALL=POSIX
-ENV LFS_TGT=$(uname -m)-lfs-linux-gnu
+ENV LFS_TGT=$MACHINE_ARCH-lfs-linux-gnu
 ENV PATH=/tools/bin:/bin:/usr/bin
 
 RUN rm /bin/sh && \
