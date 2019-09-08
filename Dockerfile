@@ -34,6 +34,8 @@ ENV LC_ALL=POSIX
 ENV LFS_TGT=$MACHINE_ARCH-lfs-linux-gnu
 ENV PATH=/tools/bin:/bin:/usr/bin
 
+ENV FORCE_UNSAFE_CONFIGURE=1 
+
 RUN rm /bin/sh && \
     ln -s /bin/bash /bin/sh
 
